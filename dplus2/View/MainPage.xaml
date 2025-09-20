@@ -4,7 +4,8 @@
 	xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
 	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 	xmlns:drawable="clr-namespace:dplus2.Model"
-	xmlns:viewmodel="clr-namespace:dplus2.ViewModel">
+	xmlns:viewmodel="clr-namespace:dplus2.ViewModel"
+	BackgroundColor="Black">
 
 	<ContentPage.BindingContext>
 		<viewmodel:MainPageViewModel />
@@ -14,9 +15,15 @@
 		<Style TargetType="Label">
 			<Setter Property="FontAttributes" Value="Bold" />
 			<Setter Property="FontSize" Value="20" />
+			<Setter Property="HorizontalTextAlignment" Value="Center" />
+			<Setter Property="TextColor" Value="White" />
 		</Style>
 		<Style TargetType="Entry">
 			<Setter Property="Margin" Value="0,20,0,20" />
+			<Setter Property="BackgroundColor" Value="White" />
+			<Setter Property="TextColor" Value="Black" />
+			<Setter Property="HorizontalTextAlignment" Value="Center" />
+			<Setter Property="FontSize" Value="20" />
 		</Style>
 		<drawable:GraphicsDrawable x:Key="graphicsDrawable" />
 	</ContentPage.Resources>
@@ -34,15 +41,20 @@
 			<Entry Text="{Binding MediaRetorno}" />
 
 			<Label Text="Tempo &#10;(duração do gerador de preços)" />
-			<Entry Text="{Binding Tempo}" />
+			<Entry Text="{Binding Tempo}"/>
 
 			<Button
 				x:Name="BtnSimulacao"
 				FontAttributes="Bold"
+				FontSize="20"
+				BackgroundColor="Gold"
 				HorizontalOptions="Fill"
 				Text="Gerar Simulação" />
 
+			<Label Text="Simulação:" Margin="0,50,0,20"/>
+			
 			<GraphicsView
+				Margin="0,20,0,20"
 				Drawable="{StaticResource graphicsDrawable}"
 				HeightRequest="300"
 				WidthRequest="400" />
