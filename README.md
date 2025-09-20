@@ -8,12 +8,12 @@ Main:
 aplicação;
 - [ ] Implemente o código fornecido GenerateBrownianMotion no modelo da sua aplicação;
 - [ ] Utilizar GraphicsView/IDrawable do .NET MAUI ou SkiaSharp do .NET.;
-- [ ] Entrada de Parâmetros: Adicione controles de entrada na View para permitir que o
+- [x] Entrada de Parâmetros: Adicione controles de entrada na View para permitir que o
 usuário insira os seguintes parâmetros:
-  - [ ] Preço inicial,
-  - [ ] Volatilidade,
-  - [ ] Média do retorno,
-  - [ ] Tempo (duração do gerador de preços).
+  - [x] Preço inicial,
+  - [x] Volatilidade,
+  - [x] Média do retorno,
+  - [x] Tempo (duração do gerador de preços).
 
 Optional
 - [ ] Adicionar escala vertical e horizontal;
