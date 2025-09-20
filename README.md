@@ -3,11 +3,11 @@
 ### App Screenshot
 
 Main:
-- [x] Implementação da Aplicação .NET MAUI Desktop;
+- [ ] Implementação da Aplicação .NET MAUI Desktop;
 - [x] Utilize o padrão MVVM (Model-View-ViewModel) para organizar a estrutura da
 aplicação;
 - [x] Implemente o código fornecido GenerateBrownianMotion no modelo da sua aplicação;
-- [ ] Utilizar GraphicsView/IDrawable do .NET MAUI ou SkiaSharp do .NET.;
+- [x] Utilizar GraphicsView/IDrawable do .NET MAUI ou SkiaSharp do .NET.;
 - [x] Entrada de Parâmetros: Adicione controles de entrada na View para permitir que o
 usuário insira os seguintes parâmetros:
   - [x] Preço inicial,
