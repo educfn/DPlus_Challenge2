@@ -11,11 +11,9 @@
             PathF path = new PathF();
             float x_point = 0.0f;
             
-            path.MoveTo(x_point, 0);
             foreach(double y_point in y_points)
-                path.LineTo(x_point += 10, (float)y_point);
+                path.LineTo(x_point++, (float)y_point);
 
-            path.Close();
             canvas.StrokeColor = Colors.Green;
             canvas.StrokeSize = 6;
             canvas.DrawPath(path);

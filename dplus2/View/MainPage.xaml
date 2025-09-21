@@ -54,12 +54,13 @@
 
 			<Label Text="Simulação:" Margin="0,50,0,20"/>
 			
-			<GraphicsView
-				x:Name="graphicsView"
-				Margin="0,20,0,20"
-				Drawable="{Binding GraphicsDrawable}"
-				HeightRequest="300"
-				WidthRequest="400" />
+			<Border Margin="0,20,0,20">
+				<GraphicsView
+					x:Name="graphicsView"
+					Drawable="{Binding GraphicsDrawable}"
+					HeightRequest="300"
+					WidthRequest="400" />
+			</Border>
 		</VerticalStackLayout>
 	</ScrollView>
 
