@@ -1,9 +1,10 @@
 # Challenge 2
 
 ### App Screenshot
+<img width="1361" height="719" alt="image" src="https://github.com/user-attachments/assets/c51581ac-4d71-49a2-b4fc-0c990f69a93f" />
 
 Main:
-- [ ] Implementação da Aplicação .NET MAUI Desktop;
+- [x] Implementação da Aplicação .NET MAUI Desktop;
 - [x] Utilize o padrão MVVM (Model-View-ViewModel) para organizar a estrutura da
 aplicação;
 - [x] Implemente o código fornecido GenerateBrownianMotion no modelo da sua aplicação;
