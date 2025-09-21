@@ -6,7 +6,7 @@
 	xmlns:drawable="clr-namespace:dplus2.Model"
 	xmlns:viewmodel="clr-namespace:dplus2.ViewModel"
 	BackgroundColor="Black">
-
+	
 	<ContentPage.BindingContext>
 		<viewmodel:MainPageViewModel />
 	</ContentPage.BindingContext>
@@ -25,7 +25,6 @@
 			<Setter Property="HorizontalTextAlignment" Value="Center" />
 			<Setter Property="FontSize" Value="20" />
 		</Style>
-		<drawable:GraphicsDrawable x:Key="graphicsDrawable" />
 	</ContentPage.Resources>
 
 	<ScrollView>
@@ -47,6 +46,8 @@
 				x:Name="BtnSimulacao"
 				FontAttributes="Bold"
 				FontSize="20"
+				Clicked="BtnSimulacao_Clicked"
+				Command="{Binding BtnIniciarSimulacao}"
 				BackgroundColor="Gold"
 				HorizontalOptions="Fill"
 				Text="Gerar Simulação" />
@@ -54,8 +55,9 @@
 			<Label Text="Simulação:" Margin="0,50,0,20"/>
 			
 			<GraphicsView
+				x:Name="graphicsView"
 				Margin="0,20,0,20"
-				Drawable="{StaticResource graphicsDrawable}"
+				Drawable="{Binding GraphicsDrawable}"
 				HeightRequest="300"
 				WidthRequest="400" />
 		</VerticalStackLayout>
