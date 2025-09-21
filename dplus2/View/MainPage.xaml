@@ -46,7 +46,6 @@
 				x:Name="BtnSimulacao"
 				FontAttributes="Bold"
 				FontSize="20"
-				Clicked="BtnSimulacao_Clicked"
 				Command="{Binding BtnIniciarSimulacao}"
 				BackgroundColor="Gold"
 				HorizontalOptions="Fill"

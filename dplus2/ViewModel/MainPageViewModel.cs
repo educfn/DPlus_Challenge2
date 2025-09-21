@@ -20,6 +20,7 @@ namespace dplus2.ViewModel
 
         public ICommand BtnIniciarSimulacao => ComandoIniciarSimulacao;
         public GraphicsDrawable GraphicsDrawable { get; set; }
+        public Action? RedrawGraphicsView { get; set;}
         public float PrecoInicial { get; set; }
         public float Volatilidade { get; set; }
         public float MediaRetorno { get; set; }
@@ -27,9 +28,10 @@ namespace dplus2.ViewModel
 
         private void IniciarSimulacao()
         {
-            if (Tempo <= 0) return;
+            if (Tempo <= 0 || RedrawGraphicsView == null) return;
 
             GraphicsDrawable.AddY_Points(BrownianMotion.GenerateBrownianMotion(Volatilidade, MediaRetorno, PrecoInicial, Tempo));
+            RedrawGraphicsView.Invoke();
         }
     }
 }
