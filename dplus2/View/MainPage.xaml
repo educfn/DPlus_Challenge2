@@ -6,7 +6,7 @@
 	xmlns:drawable="clr-namespace:dplus2.Model"
 	xmlns:viewmodel="clr-namespace:dplus2.ViewModel"
 	BackgroundColor="Black">
-	
+
 	<ContentPage.BindingContext>
 		<viewmodel:MainPageViewModel />
 	</ContentPage.BindingContext>
@@ -28,39 +28,45 @@
 	</ContentPage.Resources>
 
 	<ScrollView>
-		<VerticalStackLayout>
+		<Grid ColumnDefinitions="1*,58*,1*,39*,1*" RowDefinitions="1*,99*">
+			<Label Grid.Column="1" Grid.Row="0" Text="Simulação:" Margin="0,50,0,20"/>
 
-			<Label Text="Preço inicial" />
-			<Entry Text="{Binding PrecoInicial}" />
-
-			<Label Text="Volatilidade" />
-			<Entry Text="{Binding Volatilidade}" />
-
-			<Label Text="Média do retorno" />
-			<Entry Text="{Binding MediaRetorno}" />
-
-			<Label Text="Tempo &#10;(duração do gerador de preços)" />
-			<Entry Text="{Binding Tempo}"/>
-
-			<Button
-				x:Name="BtnSimulacao"
-				FontAttributes="Bold"
-				FontSize="20"
-				Command="{Binding BtnIniciarSimulacao}"
-				BackgroundColor="Gold"
-				HorizontalOptions="Fill"
-				Text="Gerar Simulação" />
-
-			<Label Text="Simulação:" Margin="0,50,0,20"/>
-			
-			<Border Margin="0,20,0,20">
+			<Border Grid.Column="1" Grid.Row="1">
+				<Border.StrokeShape>
+					<RoundRectangle CornerRadius="20"/>
+				</Border.StrokeShape>
 				<GraphicsView
+					HeightRequest="500"
 					x:Name="graphicsView"
-					Drawable="{Binding GraphicsDrawable}"
-					HeightRequest="300"
-					WidthRequest="400" />
+					Drawable="{Binding GraphicsDrawable}" />
 			</Border>
-		</VerticalStackLayout>
+			
+			<VerticalStackLayout VerticalOptions="Center" Grid.Column="3" Grid.Row="0" Grid.RowSpan="2">
+
+				<Label Text="Preço inicial" />
+				<Entry Text="{Binding PrecoInicial}" />
+
+				<Label Text="Volatilidade" />
+				<Entry Text="{Binding Volatilidade}" />
+
+				<Label Text="Média do retorno" />
+				<Entry Text="{Binding MediaRetorno}" />
+
+				<Label Text="Tempo &#10;(duração do gerador de preços)" />
+				<Entry Text="{Binding Tempo}"/>
+
+				<Button
+					x:Name="BtnSimulacao"
+					FontAttributes="Bold"
+					FontSize="20"
+					Command="{Binding BtnIniciarSimulacao}"
+					BackgroundColor="Gold"
+					HorizontalOptions="Fill"
+					Text="Gerar Simulação" />
+
+			</VerticalStackLayout>
+		</Grid>
+
 	</ScrollView>
 
 </ContentPage>
