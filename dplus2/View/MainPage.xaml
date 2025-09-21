@@ -54,6 +54,9 @@
 
 				<Label Text="Tempo &#10;(duração do gerador de preços)" />
 				<Entry Text="{Binding Tempo}"/>
+				
+				<Label Text="Quantidade de Simulações" />
+				<Entry Text="{Binding QuantidadeDeSimulacoes}"/>
 
 				<Button
 					x:Name="BtnSimulacao"
