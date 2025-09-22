@@ -1,7 +1,8 @@
 # Challenge 2
 
 ### App Screenshot
-<img width="1361" height="719" alt="image" src="https://github.com/user-attachments/assets/c51581ac-4d71-49a2-b4fc-0c990f69a93f" />
+<img width="1917" height="1032" alt="image" src="https://github.com/user-attachments/assets/a0494b5a-5744-40af-b4a5-753bd5e18f7a" />
+
 
 Main:
 - [x] Implementação da Aplicação .NET MAUI Desktop;
@@ -18,7 +19,7 @@ usuário insira os seguintes parâmetros:
 
 Optional
 - [ ] Adicionar escala vertical e horizontal;
-- [ ] Permitir que o usuário simule múltiplos resultados (parâmetro na tela informando
+- [x] Permitir que o usuário simule múltiplos resultados (parâmetro na tela informando
 número de simulações), plotando mais de uma linha;
 - [ ] Enriquecer os componentes de entrada de parâmetro (exemplo, stepper, slider...);
 - [ ] Enriquecer o visual e layout da aplicação;
