@@ -3,7 +3,6 @@
 ### App Screenshot
 <img width="1916" height="1024" alt="image" src="https://github.com/user-attachments/assets/9fc47e27-83d2-42ff-bf01-7513d9a5cf2b" />
 
-
 Main:
 - [x] Implementação da Aplicação .NET MAUI Desktop;
 - [x] Utilize o padrão MVVM (Model-View-ViewModel) para organizar a estrutura da
@@ -25,7 +24,7 @@ número de simulações), plotando mais de uma linha;
 - [ ] Enriquecer o visual e layout da aplicação;
 - [ ] Permitir que o usuário personalize visualmente o gráfico, por exemplo, escolhendo
 cores, estilo de linha, etc.;
-- [ ] Enriquecer a responsividade da aplicação;
+- [x] Enriquecer a responsividade da aplicação;
 - [ ] Teste unitário;
 - [ ] Documentação.
 - [X] Utilizar .Net 9.
