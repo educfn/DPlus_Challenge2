@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace dplus2.Model
+﻿namespace dplus2.Model
 {
     public class GraphicsDrawable : IDrawable
     {
@@ -11,19 +9,19 @@ namespace dplus2.Model
         {
             int simulationIndex = 0;
             canvas.StrokeColor = canvas.FillColor = Colors.Green;
-            canvas.StrokeSize = 60;
+            canvas.StrokeSize = 6;
 
             while (simulationIndex < numSimulations)
             {
                 if (y_points[simulationIndex].Length == 0)
                     return;
 
-                float last_xpoint = dirtyRect.Center.X;
+                float last_xpoint = dirtyRect.X;
             
-                for (int y_index = 0; y_index < y_points.Length - 1; )
+                for (int y_index = 0; y_index < y_points[simulationIndex].Length - 1; )
                 {
                     canvas.FillCircle(last_xpoint, y_points[simulationIndex][y_index], 6);
-                    canvas.DrawLine(last_xpoint, y_points[simulationIndex][y_index],last_xpoint += 4, y_points[simulationIndex][++y_index]);
+                    canvas.DrawLine(last_xpoint, y_points[simulationIndex][y_index],last_xpoint += 20, y_points[simulationIndex][++y_index]);
                 }
                 simulationIndex++;
             }
