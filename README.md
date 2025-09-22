@@ -1,8 +1,7 @@
 # Challenge 2
 
 ### App Screenshot
-<img width="1917" height="1032" alt="image" src="https://github.com/user-attachments/assets/a0494b5a-5744-40af-b4a5-753bd5e18f7a" />
-
+<img width="1914" height="1026" alt="image" src="https://github.com/user-attachments/assets/6366a4d3-aaf2-41a5-8ca7-1671c2f09751" />
 
 Main:
 - [x] Implementação da Aplicação .NET MAUI Desktop;
