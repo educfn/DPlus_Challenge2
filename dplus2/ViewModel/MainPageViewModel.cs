@@ -1,4 +1,5 @@
-﻿using dplus2.Model;
+﻿using CommunityToolkit.Mvvm.Input;
+using dplus2.Model;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows.Input;
@@ -8,7 +9,6 @@ namespace dplus2.ViewModel
     public class MainPageViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler? PropertyChanged;
-        private Command ComandoIniciarSimulacao;
         private float _precoInicial;
         private float _volatilidade;
         private float _mediaRetorno;
@@ -21,12 +21,13 @@ namespace dplus2.ViewModel
             Volatilidade = 0;
             MediaRetorno = 0;
             Tempo = 0;
+            QuantidadeDeSimulacoes = 1;
             GraphicsDrawable = new();
 
-            ComandoIniciarSimulacao = new Command(() => IniciarSimulacao());
+            BtnIniciarSimulacao = new AsyncRelayCommand(IniciarSimulacao, AsyncRelayCommandOptions.None);
         }
 
-        public ICommand BtnIniciarSimulacao => ComandoIniciarSimulacao;
+        public ICommand BtnIniciarSimulacao { get; }
         public GraphicsDrawable GraphicsDrawable { get; set; }
         public Action? RedrawGraphicsView { get; set; }
         public float PrecoInicial 
@@ -95,9 +96,9 @@ namespace dplus2.ViewModel
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        private void IniciarSimulacao()
+        private Task IniciarSimulacao()
         {
-            if (Tempo <= 0 || RedrawGraphicsView == null) return;
+            if (Tempo <= 0 || RedrawGraphicsView == null) return Task.CompletedTask;
 
             double[][] matrix_ypoints = new double[QuantidadeDeSimulacoes][];
 
@@ -108,6 +109,7 @@ namespace dplus2.ViewModel
 
             GraphicsDrawable.Add_YPoints_And_NSimulation(matrix_ypoints, QuantidadeDeSimulacoes);
             RedrawGraphicsView.Invoke();
+            return Task.CompletedTask;
         }
     }
 }
