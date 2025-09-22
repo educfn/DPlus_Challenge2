@@ -24,12 +24,13 @@
 			<Setter Property="TextColor" Value="Black" />
 			<Setter Property="HorizontalTextAlignment" Value="Center" />
 			<Setter Property="FontSize" Value="20" />
+			<Setter Property="Keyboard" Value="Numeric" />
 		</Style>
 	</ContentPage.Resources>
 
 	<ScrollView>
 		<Grid ColumnDefinitions="1*,58*,1*,39*,1*" RowDefinitions="1*,1*,97*,1*">
-			<Label Grid.Column="1" Grid.Row="1" Text="Simulação:" Margin="0,50,0,20"/>
+			<Label Grid.Column="1" Grid.Row="1" Text="Simulação Movimento Browniano:" Margin="0,50,0,20"/>
 
 			<Border Grid.Column="1" Grid.Row="2">
 				<Border.StrokeShape>
