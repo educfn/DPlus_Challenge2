@@ -4,17 +4,22 @@
     {
         private float[][] y_points = { Array.Empty<float>() };
         private int numSimulations = 1;
+        Random rand = new Random();
 
         public void Draw(ICanvas canvas, RectF dirtyRect)
         {
             int simulationIndex = 0;
-            canvas.StrokeColor = canvas.FillColor = Colors.Green;
             canvas.StrokeSize = 6;
 
             while (simulationIndex < numSimulations)
             {
                 if (y_points[simulationIndex].Length == 0)
                     return;
+
+                canvas.StrokeColor = canvas.FillColor = Color.FromRgb(
+                (byte)rand.Next(byte.MinValue,byte.MaxValue),
+                (byte)rand.Next(byte.MinValue,byte.MaxValue),
+                (byte)rand.Next(byte.MinValue,byte.MaxValue));
 
                 float last_xpoint = dirtyRect.X;
             
