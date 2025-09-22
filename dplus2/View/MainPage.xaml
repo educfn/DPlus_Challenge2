@@ -28,10 +28,10 @@
 	</ContentPage.Resources>
 
 	<ScrollView>
-		<Grid ColumnDefinitions="1*,58*,1*,39*,1*" RowDefinitions="1*,99*">
-			<Label Grid.Column="1" Grid.Row="0" Text="Simulação:" Margin="0,50,0,20"/>
+		<Grid ColumnDefinitions="1*,58*,1*,39*,1*" RowDefinitions="1*,1*,97*,1*">
+			<Label Grid.Column="1" Grid.Row="1" Text="Simulação:" Margin="0,50,0,20"/>
 
-			<Border Grid.Column="1" Grid.Row="1">
+			<Border Grid.Column="1" Grid.Row="2">
 				<Border.StrokeShape>
 					<RoundRectangle CornerRadius="20"/>
 				</Border.StrokeShape>
@@ -41,7 +41,7 @@
 					Drawable="{Binding GraphicsDrawable}" />
 			</Border>
 			
-			<VerticalStackLayout VerticalOptions="Center" Grid.Column="3" Grid.Row="0" Grid.RowSpan="2">
+			<VerticalStackLayout VerticalOptions="Center" Grid.Column="3" Grid.Row="1" Grid.RowSpan="2">
 
 				<Label Text="Preço inicial" />
 				<Entry Text="{Binding PrecoInicial}" />
