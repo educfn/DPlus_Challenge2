@@ -19,12 +19,16 @@
 			<Setter Property="TextColor" Value="White" />
 		</Style>
 		<Style TargetType="Entry">
-			<Setter Property="Margin" Value="0,20,0,20" />
+			<Setter Property="Margin" Value="0,20,0,0" />
 			<Setter Property="BackgroundColor" Value="White" />
 			<Setter Property="TextColor" Value="Black" />
 			<Setter Property="HorizontalTextAlignment" Value="Center" />
 			<Setter Property="FontSize" Value="20" />
 			<Setter Property="Keyboard" Value="Numeric" />
+		</Style>
+		<Style TargetType="Slider">
+			<Setter Property="Minimum" Value="0" />
+			<Setter Property="Maximum" Value="1000" />
 		</Style>
 	</ContentPage.Resources>
 
@@ -41,23 +45,28 @@
 					x:Name="graphicsView"
 					Drawable="{Binding GraphicsDrawable}" />
 			</Border>
-			
+
 			<VerticalStackLayout VerticalOptions="Center" Grid.Column="3" Grid.Row="1" Grid.RowSpan="2">
 
 				<Label Text="Preço inicial" />
-				<Entry Text="{Binding PrecoInicial}" />
+				<Entry Text="{Binding PrecoInicial, Mode=TwoWay}" />
+				<Slider Value="{Binding PrecoInicial, Mode=OneWayToSource}"/>
 
 				<Label Text="Volatilidade" />
 				<Entry Text="{Binding Volatilidade}" />
+				<Slider Value="{Binding Volatilidade, Mode=OneWayToSource}"/>
 
 				<Label Text="Média do retorno" />
 				<Entry Text="{Binding MediaRetorno}" />
+				<Slider Value="{Binding MediaRetorno, Mode=OneWayToSource}"/>
 
 				<Label Text="Tempo &#10;(duração do gerador de preços)" />
 				<Entry Text="{Binding Tempo}"/>
-				
+				<Slider Value="{Binding Tempo, Mode=OneWayToSource}"/>
+
 				<Label Text="Quantidade de Simulações" />
-				<Entry Text="{Binding QuantidadeDeSimulacoes}"/>
+				<Label Text="{Binding QuantidadeDeSimulacoes, Mode=OneWay}" Margin="0,0,0,20"/>
+				<Stepper BackgroundColor="Salmon" Scale="1.5" HorizontalOptions="Center" Value="{Binding QuantidadeDeSimulacoes}" Minimum="1" Maximum="100" />
 
 				<Button
 					x:Name="BtnSimulacao"
@@ -66,6 +75,7 @@
 					Command="{Binding BtnIniciarSimulacao}"
 					BackgroundColor="Gold"
 					HorizontalOptions="Fill"
+					Margin="0,20,0,20"
 					Text="Gerar Simulação" />
 
 			</VerticalStackLayout>

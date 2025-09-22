@@ -1,11 +1,19 @@
 ﻿using dplus2.Model;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 using System.Windows.Input;
 
 namespace dplus2.ViewModel
 {
-    public class MainPageViewModel
+    public class MainPageViewModel : INotifyPropertyChanged
     {
+        public event PropertyChangedEventHandler? PropertyChanged;
         private Command ComandoIniciarSimulacao;
+        private float _precoInicial;
+        private float _volatilidade;
+        private float _mediaRetorno;
+        private int _quantidadeDeSimulacoes;
+        private int _tempo;
 
         public MainPageViewModel()
         {
@@ -21,11 +29,71 @@ namespace dplus2.ViewModel
         public ICommand BtnIniciarSimulacao => ComandoIniciarSimulacao;
         public GraphicsDrawable GraphicsDrawable { get; set; }
         public Action? RedrawGraphicsView { get; set; }
-        public float PrecoInicial { get; set; }
-        public float Volatilidade { get; set; }
-        public float MediaRetorno { get; set; }
-        public int QuantidadeDeSimulacoes { get; set; }
-        public int Tempo { get; set; }
+        public float PrecoInicial 
+        { 
+            get => _precoInicial;
+            set
+            {
+                if (_precoInicial != value)
+                {
+                    _precoInicial = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+        public float Volatilidade
+        { 
+            get => _volatilidade;
+            set
+            {
+                if (_volatilidade != value)
+                {
+                    _volatilidade = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+        public float MediaRetorno
+        { 
+            get => _mediaRetorno;
+            set
+            {
+                if (_mediaRetorno != value)
+                {
+                    _mediaRetorno = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+        public int QuantidadeDeSimulacoes
+        { 
+            get => _quantidadeDeSimulacoes;
+            set
+            {
+                if (_quantidadeDeSimulacoes != value)
+                {
+                    _quantidadeDeSimulacoes = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+        public int Tempo
+        { 
+            get => _tempo;
+            set
+            {
+                if (_tempo != value)
+                {
+                    _tempo = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+
+        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
 
         private void IniciarSimulacao()
         {
