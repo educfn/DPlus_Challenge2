@@ -54,11 +54,11 @@
 
 				<Label Text="Volatilidade" />
 				<Entry Text="{Binding Volatilidade}" />
-				<Slider Value="{Binding Volatilidade, Mode=OneWayToSource}"/>
+				<Slider Value="{Binding Volatilidade, Mode=OneWayToSource}" Minimum="0.01" Maximum="1"/>
 
 				<Label Text="Média do retorno" />
 				<Entry Text="{Binding MediaRetorno}" />
-				<Slider Value="{Binding MediaRetorno, Mode=OneWayToSource}"/>
+				<Slider Value="{Binding MediaRetorno, Mode=OneWayToSource}" Minimum="0.0001" Maximum="0.1"/>
 
 				<Label Text="Tempo &#10;(duração do gerador de preços)" />
 				<Entry Text="{Binding Tempo}"/>
